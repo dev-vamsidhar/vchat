@@ -2,9 +2,17 @@ const { instrument } = require("@socket.io/admin-ui");
 const httpServer = require("http").createServer();
 
 const io = require("socket.io")(httpServer, {
-  cors: {
-    origin: "http://localhost:8080",
-    methods: ["GET", "POST"],
+  origins: ["http://localhost:8080"],
+
+  handlePreflightRequest: (req, res) => {
+    res.writeHead(200, {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Max-Age": "1800",
+      "Access-Control-Allow-Methods": "GET,POST",
+      "Access-Control-Allow-Headers": "my-custom-header",
+      "Access-Control-Allow-Credentials": true,
+    });
+    res.end();
   },
 });
 httpServer.listen(3001);
