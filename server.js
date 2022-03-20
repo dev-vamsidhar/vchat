@@ -1,4 +1,7 @@
+const express = require("express");
+var cors = require("cors");
 var app = express();
+
 var server = app.listen(process.env.PORT);
 var cors = require("cors");
 app.use(cors());
@@ -27,7 +30,7 @@ const io = require("socket.io")(server, {
     res.end();
   },
 });
-httpServer.listen(process.env.PORT);
+
 console.log("started");
 io.on("connection", (socket) => {
   socket.on("send-msg", (message, room) => {
