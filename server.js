@@ -17,17 +17,10 @@ app.use(function (req, res, next) {
   next();
 });
 const io = require("socket.io")(server, {
-  origins: ["http://localhost:8080"],
-
-  handlePreflightRequest: (req, res) => {
-    res.writeHead(200, {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Max-Age": "1800",
-      "Access-Control-Allow-Methods": "GET,POST",
-      "Access-Control-Allow-Headers": "my-custom-header",
-      "Access-Control-Allow-Credentials": true,
-    });
-    res.end();
+  cors: {
+    origin: "http://localhost:8080", // I copied the origin in the error message and pasted here
+    methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 
