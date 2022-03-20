@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 95vh;
+  display: flex;
+  /* margin: auto; */
+  flex-direction: column;
+}
+.screen {
+}
+#inputmessage {
+  border-radius: 10px;
+  height: 30px;
+  margin: 10px;
+  width: 80vw;
+  min-width: 200px;
+}
+
+.messagepart {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: auto;
+}
+.messages {
+  display: flex;
+  align-items: flex-end;
+}
+ul {
+  display: flex;
+  margin: 10px;
+  background-color: rgb(253, 253, 253);
+  width: 98vw;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: flex-end;
+  list-style: none;
+}
+ul #sent {
+  position: relative;
+  margin-bottom: 10px;
+  margin-left: calc(100% - 240px);
+  padding: 10px;
+  background-color: #f8e896;
+  width: 200px;
+  text-align: left;
+  font: 400 0.9em "Open Sans", sans-serif;
+  border: 1px solid #dfd087;
+  border-radius: 10px;
+  word-wrap: break-word;
+}
+ul #sent:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 15px solid #f8e896;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  bottom: 0;
+  right: -15px;
+}
+ul #sent:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 17px solid #dfd087;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  bottom: -1px;
+  right: -17px;
+}
+
+ul #receive {
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #a8ddfd;
+  width: 200px;
+  word-wrap: break-word;
+  text-align: left;
+  font: 400 0.9em "Open Sans", sans-serif;
+  border: 1px solid #97c6e3;
+  border-radius: 10px;
+}
+ul #receive :after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 15px solid #a8ddfd;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  top: 0;
+  left: -15px;
+}
+
+ul #receive before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 17px solid #97c6e3;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  top: -1px;
+  left: -17px;
+}
+
+#btsend {
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+  align-self: center;
+  border-radius: 10px;
+}
+
+input[type="text"] {
+  font-size: 17px;
+  padding: 5px;
+  font-weight: 300;
+}
