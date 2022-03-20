@@ -1,7 +1,19 @@
-const { instrument } = require("@socket.io/admin-ui");
-const httpServer = require("http").createServer();
-
-const io = require("socket.io")(httpServer, {
+var app = express();
+var server = app.listen(process.env.PORT);
+var cors = require("cors");
+app.use(cors());
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Max-Age", "1800");
+  res.setHeader("Access-Control-Allow-Headers", "content-type");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "PUT, POST, GET, DELETE, PATCH, OPTIONS"
+  );
+  next();
+});
+const io = require("socket.io")(server, {
   origins: ["http://localhost:8080"],
 
   handlePreflightRequest: (req, res) => {
