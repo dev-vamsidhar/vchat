@@ -18,7 +18,7 @@ app.use(function (req, res, next) {
 });
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:8080", // I copied the origin in the error message and pasted here
+    origin: "https://vchat-f8e4c.web.app/", // I copied the origin in the error message and pasted here
     methods: ["GET", "POST"],
     credentials: true,
   },
