@@ -15,7 +15,7 @@ const io = require("socket.io")(httpServer, {
     res.end();
   },
 });
-httpServer.listen(3001);
+httpServer.listen(process.env.PORT);
 console.log("started");
 io.on("connection", (socket) => {
   socket.on("send-msg", (message, room) => {
